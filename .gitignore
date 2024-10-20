@@ -49,7 +49,4 @@ notes.md
 
 # Ignore Gradle build output directory
 build
-
-./src
-src/
 .vscode
