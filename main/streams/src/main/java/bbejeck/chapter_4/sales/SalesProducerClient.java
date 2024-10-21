@@ -20,6 +20,9 @@ import java.util.Map;
  * each batch to keep the example application easier to observe
  * what's going on in the log files.
  */
+/*
+ * sales producer client public class
+ */
 public class SalesProducerClient {
     private static final Logger LOG = LogManager.getLogger(SalesProducerClient.class);
     private final Map<String,Object> producerConfigs;
