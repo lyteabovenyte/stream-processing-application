@@ -21,7 +21,7 @@ import java.util.Map;
  * what's going on in the log files.
  */
 /*
- * sales producer client public class
+ * sales producer client public class with custom partitioner --> customOrderPartitioner
  */
 public class SalesProducerClient {
     private static final Logger LOG = LogManager.getLogger(SalesProducerClient.class);
