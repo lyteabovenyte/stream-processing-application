@@ -8,11 +8,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Objects;
 
-/**
- * User: Bill Bejeck
- * Date: 2/17/22
- * Time: 9:31 PM
- */
 public class CustomOrderPartitioner implements Partitioner {
 
     @Override
