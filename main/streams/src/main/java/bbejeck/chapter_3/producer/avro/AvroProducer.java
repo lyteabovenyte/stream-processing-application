@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Arrays;
 import java.util.List;
 
-
+/* it just extends the BaseProducer class for using KafkaAvroSerializer */
 public class AvroProducer extends BaseProducer<String, AvengerAvro> {
 
     static final Logger LOG = LogManager.getLogger(AvroProducer.class);
