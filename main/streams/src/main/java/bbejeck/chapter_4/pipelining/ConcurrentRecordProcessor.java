@@ -63,6 +63,7 @@ public class ConcurrentRecordProcessor implements RecordProcessor<String, Produc
                   keepProcessing = false;
                   continue;
              }
+             /* puts the last processed offset in the offsetQueue to be retrieved by the consumer to commit */
              if (consumerRecords !=null) {
                  Map<TopicPartition, OffsetAndMetadata> offsets = new HashMap<>();
                  consumerRecords.partitions().forEach(topicPartition -> {
