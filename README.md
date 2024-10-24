@@ -10,3 +10,6 @@
     - [x] ***Admin API*** to manage topics, partitions and records programmatically .
     - [x] transactional producer and idemptence producer to guratantee exactly-once semantic + consuming with *isolation.level=read_committed*.
     - [x] using ***sendOffsetsToTransaction*** method of the producer to commit offset on __consumer_offset using *producer* after processing record in consume-transform-produce cycle, to ensure committing after processing-producing and preventing non-processed record commits.
+- Kafka Connect:
+    - [x] how to apply SMTs to make changes to incoming and outgoing records and how to develop custom transformations + how to build our own custom connector
+    - [ ] 
