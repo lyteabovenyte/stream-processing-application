@@ -27,6 +27,7 @@ services:
       CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
 
 
+  # kafka connect source image from confluent to serve as the worker
   connect:
     image: localimage/kafka-connect-jdbc:latest
     build:
