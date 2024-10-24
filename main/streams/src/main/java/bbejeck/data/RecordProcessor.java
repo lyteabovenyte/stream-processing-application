@@ -11,6 +11,10 @@ import java.util.Map;
  * in an asynchronous manner.  Also provides a method for fetching offsets of records
  * successfully processed.
  */
+
+/*
+ * fetch offsets after async processing of the consumed records
+ */
 public interface RecordProcessor <K,V> {
 
     void processRecords(ConsumerRecords<K, V> records);
