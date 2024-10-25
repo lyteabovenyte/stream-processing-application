@@ -9,7 +9,8 @@
     - [x] multiple related event types *in-order* through same topic partition using both *Avro* and *protobuf* schemas(examine this when you have multiple event types but closely related and being in-order is essential such as user-login, search, purchase flow which can provide useful trend.) + considering *typeCase* and *specific* objects of Avro and protobuf.
     - [x] ***Admin API*** to manage topics, partitions and records programmatically .
     - [x] transactional producer and idemptence producer to guratantee exactly-once semantic + consuming with *isolation.level=read_committed*.
-    - [x] using ***sendOffsetsToTransaction*** method of the producer to commit offset on *__consumer_offset topic* using *producer* after processing record in consume-transform-produce cycle, to ensure committing after processing-producing and preventing non-processed record commits.
+    - [x] using ```sendOffsetsToTransaction``` method of the producer to commit offset on *__consumer_offset topic* using *producer* after processing record in consume-transform-produce cycle, to ensure committing after processing-producing and preventing non-processed record commits.
 - Kafka Connect:
-    - [x] how to apply SMTs to make changes to incoming and outgoing records and how to develop custom transformations + how to build our own custom connector
+    - [x] the key concepts and relation between *kafka connect cluster* and *workers* with *tasks* that they do individually
+    - [x] using some provided SMTs --> ```ValueToKey, ExtractField, MaskField``` and writing custom SMT (*and I love customs*)
     - [ ] 
