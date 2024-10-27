@@ -27,4 +27,27 @@
         but it should always be clear from the context which is being referred to.
     - [x] using **monitorThread** to reconfigure connector's task whenever it notices changes on the sourceConnector symbols using ```connectorContext```
     - [x] creating **custom transformation** by implementing ```transformation``` interface, specially the ```apply``` method of the interface.
-    - [ ] 
+- [**Kafka Streams**](https://kafka.apache.org/documentation/streams/):
+    - intro:
+        -  *Kafka streams* is a graph of processing nodes transforming evnet data as it streams through each node. so let's get familiar with *kafka streams API*
+        -  kafka streams is an abstraction on top of kafka producer and consumer client API, as it is the native stream processing library for apache kafka, it does not run inside the cluster or the broker but it connects as a client application.
+        -  kafka streams approach:
+              -  1. Defining configurations items
+              -  2. Creating Serde instance, either custom or predefined, used in the (De)serialization of records. (**Serde** is a wrapper object that contain a serializer and a deserializer for a given type)
+              -  3. Building processor topology
+              -  4. Creating and starting kafka streams
+        - **processor topology** is merely a logical abstraction for your stream processing code, and contain one or more processor nodes (but typically they are logicaly one processor topology).
+        - **Branching** (aka. **Spliting**) provides an elegent way to process record differently whithn the same stream. `KStream#split` returns a BranchedKstream object which can be used with a `predicate` interface containing a `test` method + the branch which act as the gate for the branched record.
+        - differences between `Branched.withConsumer` and `Branched.withFunction`
+    &nbsp;
+    - features that have been expermineted:
+        - [x] Produced configuration in sink processor which contains custom ```StreamPartitioner```.
+        - [x] differences between `Produced` and `Consumed` instances and their configurations
+        - [x] expermineting ```ValueMapper(V, V1)``` interface and the method ```ValueMapper.apply``` to implement a child processior in DAG. also expermineting other similar mappers --> `KeyValueMapper` and `ValueMapperWithKeys` in processor nodes depending on the condition.
+        - [x] considering the usage of ```flatMap```, a well-known operation from functional programming which emits zero or more records from a single input record by falttening a collection returned from a `KeyValueMapper` or `ValueMapper`.
+        - [x] considering customSerde and confuguring them.
+        - [x] expermineting `KStream#filter` and `KStream#split` and for the latter, examine `BranchedKStream` object with two parameters called `predicate` and `branched`.
+        - [x] the handy methods of split and the `Branched` object --> `branched.as` which just get the predicate and the output topic and `branched.withFunction` which can get a `mapValue` lambda funciton for SMT latter of branching and splitting and the output topic
+        - [x]  overloaded `Named` and `withName` method of *Streams DSL* and *consumed* and *produced* operations for better naming in topolgy description. as the naming becomes critical where the state is involved
+        - [x] using `TopicNameExtractor` which provide just one method named `extract` for dynamic routing of messages
+        - [x]  
