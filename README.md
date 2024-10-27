@@ -49,5 +49,18 @@
         - [x] expermineting `KStream#filter` and `KStream#split` and for the latter, examine `BranchedKStream` object with two parameters called `predicate` and `branched`.
         - [x] the handy methods of split and the `Branched` object --> `branched.as` which just get the predicate and the output topic and `branched.withFunction` which can get a `mapValue` lambda funciton for SMT latter of branching and splitting and the output topic
         - [x]  overloaded `Named` and `withName` method of *Streams DSL* and *consumed* and *produced* operations for better naming in topolgy description. as the naming becomes critical where the state is involved
-        - [x] using `TopicNameExtractor` which provide just one method named `extract` for dynamic routing of messages
-        - [x]  
+        - [x] using `TopicNameExtractor` which provide just one method named `extract` for dynamic routing of messages.
+
+        &nbsp;
+- **Stateful operations within kafka streams**:
+    - intro:
+        -  group by key is a prerequisite for stateful aggregation.
+        -  the result of all aggregation operation in kafka is **KTable**, so we should use `toStream` method to convert it to *KStream*.
+        -  as the `reduce` returns a result with the same type, if you want to change the type of the result, you can use `aggregate`.
+        -  
+    &nbsp;
+
+    - features covered:
+        - [x] covered `GroupByKey` method and the return type, `KGroupedStream.KGroupedStream` which provides method `aggregate`, `count` and `reduce`.
+        - [ ] 
+        - [ ] 
