@@ -32,7 +32,7 @@ import java.util.Properties;
 import java.util.stream.Collectors;
 
 /**
- * Kafka Streams retail sample application showing mapping of records and a more complex topology
+ * Kafka Streams retail sample application showing mapping of records and a more complex topology using three processor node
  */
 public class ZMartKafkaStreamsApp extends BaseStreamsApplication {
     private static final Logger LOG = LoggerFactory.getLogger(ZMartKafkaStreamsApp.class);
