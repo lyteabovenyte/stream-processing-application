@@ -62,7 +62,6 @@
         -  Join operation internals, containing state store for each topic and a `ValueJoiner` instance which it's `apply` method does the actual joining and passes the produced record to the next processor.
         -  
     &nbsp;
-
     - features covered:
         - [x] covered `GroupByKey` method and the return type, `KGroupedStream.KGroupedStream` which provides method `aggregate`, `count` and `reduce`.
         - [x] repatitioning is done when kafka streams notices:
