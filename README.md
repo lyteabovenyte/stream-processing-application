@@ -57,10 +57,23 @@
         -  group by key is a prerequisite for stateful aggregation.
         -  the result of all aggregation operation in kafka is **KTable**, so we should use `toStream` method to convert it to *KStream*.
         -  as the `reduce` returns a result with the same type, if you want to change the type of the result, you can use `aggregate`.
+        -  covering the *cache layer* in KStream, that is used to write just the updated and last record for each key to the changelog and state store.
+        -  experminting on repartitioning, and how kafka streams adds a sink and a source node to the topology to cover repartitioning the records.
+        -  Join operation internals, containing state store for each topic and a `ValueJoiner` instance which it's `apply` method does the actual joining and passes the produced record to the next processor.
         -  
     &nbsp;
 
     - features covered:
         - [x] covered `GroupByKey` method and the return type, `KGroupedStream.KGroupedStream` which provides method `aggregate`, `count` and `reduce`.
-        - [ ] 
+        - [x] repatitioning is done when kafka streams notices:
+            - 1. an operation where the keys have changed
+            - 2. a downstream opertion which depends on the key. (such as ``GroupByKey` or an aggregation or join).
+        - [x] `KStream.repartition` method which accept one parameter, `Repartitioned`, it allows us to specify:
+            - 1. the Serdes fo the key and value
+            - 2. the base name for the topic
+            - 3. the number of partitions to use for the topic
+            - 4. a `StreamPartitioner` instance, should you need to customize the distribution of records to parititons.
+        - [x] using optimization configuration in kafka streams config to reduce the redundant repartitioning nodes using the underlying processor graph that kafka streams is building under the hood.
+        - [x] Join and `ValueJoiner.apply` method which gets three possible parameters <V1, V2, R>, the first two parameter are the value types for join and "R" is the result type after join.
+        - [x] experimenting `JoinWindows` configuration object and `JoinWindows.before` and `JoinWindows.after` configuration methods.
         - [ ] 
