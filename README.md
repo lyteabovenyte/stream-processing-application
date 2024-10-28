@@ -60,6 +60,7 @@
         -  covering the *cache layer* in KStream, that is used to write just the updated and last record for each key to the changelog and state store.
         -  experminting on repartitioning, and how kafka streams adds a sink and a source node to the topology to cover repartitioning the records.
         -  Join operation internals, containing state store for each topic and a `ValueJoiner` instance which it's `apply` method does the actual joining and passes the produced record to the next processor.
+        -  every processor's state store is backed by a changelog for state recvoery, just like any other databases that uses changelog for state recovery.
         -  
     &nbsp;
     - features covered:
