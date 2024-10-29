@@ -61,7 +61,17 @@
         -  experminting on repartitioning, and how kafka streams adds a sink and a source node to the topology to cover repartitioning the records.
         -  Join operation internals, containing state store for each topic and a `ValueJoiner` instance which it's `apply` method does the actual joining and passes the produced record to the next processor.
         -  every processor's state store is backed by a changelog for state recvoery, just like any other databases that uses changelog for state recovery.
-        -  
+        -  covering usage of the "**standby tasks**" for faster failover when an KStream application drops using `num.standby.replica` configuration.
+        -  as the tasks are in shared-nothing architecture, there is no locking or concurrency issues around the state stores.
+        -  each task is the sole owner of the assigned store and is the only one to read and write to the store.
+        -  kafka streams configuration objects for naming state stores and repartition topics:
+            | conf object        |            what's named           |    where used          |
+            |------------------- |-----------------------------------|-------------------------|
+            | `Materialized`       | State stores, changelog topic     | `Aggregatin`             |
+            |``Repartitioned``       | Repartition topic                 | `Repartition`(manual by user)|
+            |`Grouped`             | Repartition topic                 | `groupBy`(automatic repartitioning)|
+            | `StreamJoined`       | State stores                      | `Join` (automatic repartitioning)|
+        - 
     &nbsp;
     - features covered:
         - [x] covered `GroupByKey` method and the return type, `KGroupedStream.KGroupedStream` which provides method `aggregate`, `count` and `reduce`.
