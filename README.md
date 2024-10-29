@@ -86,4 +86,15 @@
         - [x] using optimization configuration in kafka streams config to reduce the redundant repartitioning nodes using the underlying processor graph that kafka streams is building under the hood.
         - [x] Join and `ValueJoiner.apply` method which gets three possible parameters <V1, V2, R>, the first two parameter are the value types for join and "R" is the result type after join.
         - [x] experimenting `JoinWindows` configuration object and `JoinWindows.before` and `JoinWindows.after` configuration methods.
-        - [ ] 
+
+- KTables API:
+    - intro:
+        - we can imagine the stream event as a log and the stream of updates as a changelog. KTables are update stream or somehow changelog with a compact nature internally.
+        - KTables are stateful.
+        - an overloaded version of `StreamBuilder.table` also accept a ``Materialized` instance allowing us to configure the type of store and provide naming for querying the table
+        - 
+
+    - features have been covered:
+        - udating KTable or update stream to KStream using `toStream()` method
+        - usage of `KStream.toTable` and `KTable.toStream` for changing one to another.
+        - 
