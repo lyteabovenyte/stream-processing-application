@@ -27,7 +27,7 @@
         but it should always be clear from the context which is being referred to.
     - [x] using **monitorThread** to reconfigure connector's task whenever it notices changes on the sourceConnector symbols using ```connectorContext```
     - [x] creating **custom transformation** by implementing ```transformation``` interface, specially the ```apply``` method of the interface.
-- [**Kafka Streams**](https://kafka.apache.org/documentation/streams/):
+- [**Kafka Streams**](https://kafka.apache.org/20/javadoc/org/apache/kafka/streams/kstream/KStream):
     - intro:
         -  *Kafka streams* is a graph of processing nodes transforming evnet data as it streams through each node. so let's get familiar with *kafka streams API*
         -  kafka streams is an abstraction on top of kafka producer and consumer client API, as it is the native stream processing library for apache kafka, it does not run inside the cluster or the broker but it connects as a client application.
@@ -87,7 +87,7 @@
         - [x] Join and `ValueJoiner.apply` method which gets three possible parameters <V1, V2, R>, the first two parameter are the value types for join and "R" is the result type after join.
         - [x] experimenting `JoinWindows` configuration object and `JoinWindows.before` and `JoinWindows.after` configuration methods.
 
-- KTables API:
+- [KTables](https://kafka.apache.org/26/javadoc/org/apache/kafka/streams/kstream/KTable.html):
     - intro:
         - we can imagine the stream event as a log and the stream of updates as a changelog. KTables are update stream or somehow changelog with a compact nature internally.
         - KTables are stateful.
@@ -112,5 +112,3 @@
             - 2. a KeyValueMapper to extract the key in the Stream ( which could be `null` and we should choose one of the fields for the key), for the GlobalKTable to join with.
             - 3. the `ValueJoiner` interface to compute the join result.
         - a good rule of thumb in joining KStream, KTable and GlobalKTables is --> use KStream-GlobalKTable joins only when you have static lookup data to join with a stream and use KStream-KTable joins for dynamic streams and when the stream is extensive, cause Kafka Streams will distribute it across multiple instances.
-        - 
-        - 
