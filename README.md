@@ -92,9 +92,25 @@
         - we can imagine the stream event as a log and the stream of updates as a changelog. KTables are update stream or somehow changelog with a compact nature internally.
         - KTables are stateful.
         - an overloaded version of `StreamBuilder.table` also accept a ``Materialized` instance allowing us to configure the type of store and provide naming for querying the table
+        - how the updating of the record (aka. **KTable aggregation**) is applied in two-step process:
+            - 1. the old value gets subtracted.
+            - 2. the new value gets added.
+          - so KTable sends both the old and new value from a key to the aggregator's processor, and aggregator processor remove the old value based on the received key and adds the new value.
+          - and also for other KTable's API methods such as reduce and count, we do the same process as we only have to save the newly added value, we first substract the old one and add the new one to the cumulated variable.
+        - as the KTable is partitioned among the KStream application with the same application ID, each KTable only contains it's own partition's data, but there is another concept in KTable called `GlobalkTable` which consume all the topic partition's data.
         - 
-
     - features have been covered:
         - udating KTable or update stream to KStream using `toStream()` method
         - usage of `KStream.toTable` and `KTable.toStream` for changing one to another.
+        - with the `GlobalKTable` application, KStream don't create a changelog topic, as the source topic would act as a changelog for failover recovery. so condiser using `GlobalKTable` for **broadcasting information** between kafka Streams application for use in joins.
+        - another andvantage of `GlobalKTable` is that since it has all partition's data, we can use the value of a given Key for joining using a `KeyValueMapper`.
+        - joining KStream with KTable need **co-parititoning**, so each key is on the same parititon for both the KStream and KTable thread to join. if the quantity of partitions of the source topics is different, repartitioning is needed.
+        - is a *KStream-KTable join*, only when the KStream updates a key, `ValueJoiner` interface yield a new result of join, but updating a key in KTable only results updating a key in the KTable and no result is yileded from join.
+        - the usage of `store.PersistetVersionedKeyValueStore` we can version the table using timestamp and with a **versioned KTable** the join for a record in the KStream uses the same timestamp range from the table resulting in a *temporal* correct result.
+        - is KStream-GlobalKTable joins --> we provide three parameter to the join:
+            - 1. the GloablKTable to join the Stream with
+            - 2. a KeyValueMapper to extract the key in the Stream ( which could be `null` and we should choose one of the fields for the key), for the GlobalKTable to join with.
+            - 3. the `ValueJoiner` interface to compute the join result.
+        - a good rule of thumb in joining KStream, KTable and GlobalKTables is --> use KStream-GlobalKTable joins only when you have static lookup data to join with a stream and use KStream-KTable joins for dynamic streams and when the stream is extensive, cause Kafka Streams will distribute it across multiple instances.
+        - 
         - 
