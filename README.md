@@ -87,7 +87,7 @@
         - [x] Join and `ValueJoiner.apply` method which gets three possible parameters <V1, V2, R>, the first two parameter are the value types for join and "R" is the result type after join.
         - [x] experimenting `JoinWindows` configuration object and `JoinWindows.before` and `JoinWindows.after` configuration methods.
 
-- [KTables](https://kafka.apache.org/26/javadoc/org/apache/kafka/streams/kstream/KTable.html):
+- [**KTables**](https://kafka.apache.org/26/javadoc/org/apache/kafka/streams/kstream/KTable.html):
     - intro:
         - we can imagine the stream event as a log and the stream of updates as a changelog. KTables are update stream or somehow changelog with a compact nature internally.
         - KTables are stateful.
@@ -112,3 +112,11 @@
             - 2. a KeyValueMapper to extract the key in the Stream ( which could be `null` and we should choose one of the fields for the key), for the GlobalKTable to join with.
             - 3. the `ValueJoiner` interface to compute the join result.
         - a good rule of thumb in joining KStream, KTable and GlobalKTables is --> use KStream-GlobalKTable joins only when you have static lookup data to join with a stream and use KStream-KTable joins for dynamic streams and when the stream is extensive, cause Kafka Streams will distribute it across multiple instances.
+- **Windowing and Timestamps**:
+    - intro:
+        - using window or windowing means that putting aggregations data into discrete time bucket. (aka. put the data into a specific **context**.)
+        - while both KStream and KTable supprot aggregation, windowing is available on KStream API, due to the nature of their abstractaion.
+        - 
+
+    - related features:
+        - 
