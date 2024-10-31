@@ -9,11 +9,8 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 
-/**
- * User: Bill Bejeck
- * Date: 2/17/24
- * Time: 11:55AM
- */
+// implementing StreamPartitioner for WindowedKey objects.
+
 public class WindowedStreamsPartitioner<K, V> implements StreamPartitioner<Windowed<K>, V> {
 
        private final Serializer<K> keySerializer;
