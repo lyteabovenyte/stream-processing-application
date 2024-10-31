@@ -127,8 +127,22 @@
 
         - sliding windows starting and ending time are inclusive and look back for the events occuring within the defined time difference.
         - sliding window only evaluate aggreate when a new record comes into the topic or a record falls out. so kafka streams only evaluates it when the content of the window changed, so it prevent redundancy.
+        - with hopping and tumbling windowing strategy, the event's timestamp determine which window it is belong to. cause it these strategies, the **windows align to the epoch**.
+        - 
 
     - related features:
         - the `GroupByKey` method returns `KGroupedStream` which it's API includes all the method needed for windowing, so after that we could call `windowedBy` method and provide it's single parameter, the window instance for the aggregation. --> such as "`TimeWindows`" class.
         - windowed aggregation wrap the key in a `Windowed` class containing the key and the window of the aggregation.
         - with the session window aggregation, we need a `Merger` instance to merge the results of the primary aggregation ( that is specified in topology) with another aggregation to combine the primary result and provide a single agg result for each session.
+        - when we specify a windowed aggregation, kafka streams wraps the key with a `Windowed` object which include the start and the end of the window.
+        - `Grace` is a way in kafka streams to allow and **out-of-order** record to join a window even though it arrived late due network partition or etc.
+        - as we have two strategy to derive a **final result** from the window aggregation:
+            - 1. `EmitStrategy` --> which emits the final result after the window has been closed and no more intermediate result are derived. ( `EmitStrategy.onWindowClosed()` or `EmitStrategy.onWindowUpdate()`, the latter one is the default behavior. )
+            - 2. `KTable.suppress` --> suppression works by buto ffering the intermediate results, per key, until the window closes and there is a final result.
+        - the suppresion approach on retreiving a final result comes with two `BufferConfig` option:
+            - 1. *eager buffering*: would emit a result if the buffer configuration met. the possibility of getting multiple result per window aggregation. 
+            - 2. *strict buffering*: would'nt emit result until the window is not closed. the possibility of OOM(OutOfMemory exception) if the buffering and available heap is not considered.
+            - it worth mentioning that with the "strict buffering" approach you can define the buffer size either to be `unbounded()` or `maxRecords(x).shutDownWhenFull()`
+            - the trade-off is something between duplicates vs shut-down gracefully.
+            - with the eager approach we can set the buffer size as well as setting the time to wait for new record until we move the result downstream.
+            - 
