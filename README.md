@@ -68,7 +68,7 @@
             | conf object        |            what's named           |    where used          |
             |------------------- |-----------------------------------|-------------------------|
             | `Materialized`       | State stores, changelog topic     | `Aggregatin`             |
-            |``Repartitioned``       | Repartition topic                 | `Repartition`(manual by user)|
+            |``Repartitioned``     | Repartition topic                 | `Repartition`(manual by user)|
             |`Grouped`             | Repartition topic                 | `groupBy`(automatic repartitioning)|
             | `StreamJoined`       | State stores                      | `Join` (automatic repartitioning)|
         - 
@@ -116,7 +116,19 @@
     - intro:
         - using window or windowing means that putting aggregations data into discrete time bucket. (aka. put the data into a specific **context**.)
         - while both KStream and KTable supprot aggregation, windowing is available on KStream API, due to the nature of their abstractaion.
-        - 
+        - timestamps are the key to windowing and they are the drivers of the action.
+        - types of windowing:
+          | type              | method              | feature          |
+          | ----------------- | --------------------|------------------|
+          | hopping windowing | windowedBy(TimeWindows.[...]).advandeBy(...) + aggregator | overlapping windows and refresh the aggregation by advandeBy second |
+          | tumbling windowing | windowedBy(TimeWindows.[...]) + aggregator | it's a hopping windowing but the advandeBy time is the same as the windowedBy |
+          | session windowing |  windowedBy(SessionWindows.[...]) + aggregator and sessionMerger| sessions will continue to grow in size until there's a gap that exceeds the configured amount of time |
+          | sliding windowing | windowedBy(SlidingWindows.[...]) + aggregator| sliding windows provide a continuous view of changes in events and only include events occuring within a specified timeframe in a fixed window size |
+
+        - sliding windows starting and ending time are inclusive and look back for the events occuring within the defined time difference.
+        - sliding window only evaluate aggreate when a new record comes into the topic or a record falls out. so kafka streams only evaluates it when the content of the window changed, so it prevent redundancy.
 
     - related features:
-        - 
+        - the `GroupByKey` method returns `KGroupedStream` which it's API includes all the method needed for windowing, so after that we could call `windowedBy` method and provide it's single parameter, the window instance for the aggregation. --> such as "`TimeWindows`" class.
+        - windowed aggregation wrap the key in a `Windowed` class containing the key and the window of the aggregation.
+        - with the session window aggregation, we need a `Merger` instance to merge the results of the primary aggregation ( that is specified in topology) with another aggregation to combine the primary result and provide a single agg result for each session.
