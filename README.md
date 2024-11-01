@@ -153,8 +153,17 @@
                 - 1. event time ( timestamp set by the produce or **event-time processing semantic**. )
                 - 2. ingestion time ( timestamp set by the broker or **log append-time processing semantic**. `LogAppendTime`)
                 - 3. processing time
-            - 
         - related features:
             - choosing timestamp semantics using `TimestampExtractor`
             - `ExtractRecordMetadataTimestamp` is an abstract class that provides the core functionality for extracting the metadata form the `ConsumerRecord`.
-            - 
+
+- **Processor API**:
+    - intro:
+        - the main difference between KStream and Processor API is their return type. with KStream the return type is either a KStream or a KTable and with Processor API's topolgy, the return type is the <u>same</u> Processor API topolgy.
+        - a key consideration for using Processor API over KStream to create topology with more control over the source, porcessor and sink node is the restriction of commit time and cache flushing which KStream provides and with Processor API, it could be much more control over the records via the `Processor.process()` method.
+        - 
+    - features:
+        - using `Topolgy.topolgy` type to `addSource()` and `addProcessor()` with required parameters.
+        - by using `ContextualProcessor` which is a class which provides override for `Processor` interface and by using `Processor.porcess()` method of the child processor and using `Context()` we can forward individual records to intended sink topics.
+        - the `Processor` interface provides the `init()`, `process()` and `close()` methods. the `Processor` is the primary driver of any application logic that works with records in our streaming application.
+        - 
