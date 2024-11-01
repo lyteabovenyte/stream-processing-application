@@ -166,4 +166,8 @@
         - using `Topolgy.topolgy` type to `addSource()` and `addProcessor()` with required parameters.
         - by using `ContextualProcessor` which is a class which provides override for `Processor` interface and by using `Processor.porcess()` method of the child processor and using `Context()` we can forward individual records to intended sink topics.
         - the `Processor` interface provides the `init()`, `process()` and `close()` methods. the `Processor` is the primary driver of any application logic that works with records in our streaming application.
+        - using `ProcessorSupplier` interface which provides a `stores` method that will automatically wire up the processor with any `StoreBuilder` instance you provide.
+        - using `ProcessorSupplier.stores` method, we have a way to automatically wire up `StateStore` instances to processors.
+        - with processor's `init()` method, we can config and initialize some of the functionality to the topology's processor along the way, such as detemining and scheduling when to emit each record instead of forwarding them right after when they arrive, or initialize a state store for the processors.
+        - `punctuator` is an interface that's a callback to handle the scheduled execution of processor logic but is encapsulated in the `Punctuator.punctuate`.
         - 
