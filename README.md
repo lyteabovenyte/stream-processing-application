@@ -171,4 +171,3 @@
         - with processor's `init()` method, we can config and initialize some of the functionality to the topology's processor along the way, such as detemining and scheduling when to emit each record instead of forwarding them right after when they arrive, or initialize a state store for the processors.
         - `punctuator` is an interface that's a callback to handle the scheduled execution of processor logic but is encapsulated in the `Punctuator.punctuate`.
         - some sort of **data-driven aggregation** where we want to aggregate data in a given window on some sort of criteria, whenever some certain condition happened we start measuring the aggregation in a pre-set window and then aggregate until an incoming record that no longer meets the criteria and condition.
-        - 
