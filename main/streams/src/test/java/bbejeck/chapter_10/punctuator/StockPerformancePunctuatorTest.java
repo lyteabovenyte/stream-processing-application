@@ -1,6 +1,6 @@
-package bbejeck.chapter_10.punctuator;
+package bbejeck.end-to-end.punctuator;
 
-import bbejeck.chapter_9.proto.StockPerformance;
+import bbejeck.Processor-API.proto.StockPerformance;
 import bbejeck.utils.TestUtils;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.processor.api.ProcessorContext;

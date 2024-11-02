@@ -1,6 +1,6 @@
 {
   "type":"record",
-  "namespace": "bbejeck.chapter_3.avro",
+  "namespace": "bbejeck.producer-consumer.avro",
   "name":"Purchase",
   "fields": [
     {"name": "item", "type":"string"},

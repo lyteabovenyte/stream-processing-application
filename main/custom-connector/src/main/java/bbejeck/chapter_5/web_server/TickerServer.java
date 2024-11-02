@@ -1,4 +1,4 @@
-package bbejeck.chapter_5.web_server;
+package bbejeck.KStream.web_server;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

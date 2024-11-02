@@ -151,18 +151,18 @@ schemaRegistry {
         subject('avro-avengers-value','streams/src/main/avro/avenger.avsc', 'AVRO')
         subject('person','streams/src/main/avro/person.avsc', 'AVRO')
         subject('college-value','streams/src/main/avro/college.avsc', 'AVRO')
-                .addReference("bbejeck.chapter_3.avro.PersonAvro", "person", 1)
+                .addReference("bbejeck.producer-consumer.avro.PersonAvro", "person", 1)
         subject('company-value','streams/src/main/avro/company.avsc', 'AVRO')
-                .addReference("bbejeck.chapter_3.avro.PersonAvro", "person", 1)
+                .addReference("bbejeck.producer-consumer.avro.PersonAvro", "person", 1)
 
 
         subject('truck_event','streams/src/main/avro/truck_event.avsc', 'AVRO')
         subject('plane_event','streams/src/main/avro/plane_event.avsc', 'AVRO')
         subject('delivery_event','streams/src/main/avro/delivery_event.avsc', 'AVRO')
         subject('inventory-events-value', 'streams/src/main/avro/all_events.avsc','AVRO')
-                .addReference("bbejeck.chapter_4.avro.TruckEvent", "truck_event", 1)
-                .addReference("bbejeck.chapter_4.avro.PlaneEvent", "plane_event", 1)
-                .addReference("bbejeck.chapter_4.avro.DeliveryEvent", "delivery_event", 1)
+                .addReference("bbejeck.pipeline.avro.TruckEvent", "truck_event", 1)
+                .addReference("bbejeck.pipeline.avro.PlaneEvent", "plane_event", 1)
+                .addReference("bbejeck.pipeline.avro.DeliveryEvent", "delivery_event", 1)
     }
 
     config {
@@ -173,32 +173,32 @@ schemaRegistry {
 
     task runAvroProducer(type: JavaExec){
         classpath sourceSets.main.runtimeClasspath
-        mainClass = "bbejeck.chapter_3.producer.avro.AvroProducer"
+        mainClass = "bbejeck.producer-consumer.producer.avro.AvroProducer"
     }
 
     task runAvroConsumer(type: JavaExec){
         classpath sourceSets.main.runtimeClasspath
-        mainClass = "bbejeck.chapter_3.consumer.avro.AvroConsumer"
+        mainClass = "bbejeck.producer-consumer.consumer.avro.AvroConsumer"
     }
 
     task runCompanyProducer(type: JavaExec) {
         classpath sourceSets.main.runtimeClasspath
-        mainClass = "bbejeck.chapter_3.producer.avro.AvroReferenceCompanyProducer"
+        mainClass = "bbejeck.producer-consumer.producer.avro.AvroReferenceCompanyProducer"
     }
 
     task runCompanyConsumer(type: JavaExec) {
         classpath sourceSets.main.runtimeClasspath
-        mainClass = "bbejeck.chapter_3.consumer.avro.AvroReferenceCompanyConsumer"
+        mainClass = "bbejeck.producer-consumer.consumer.avro.AvroReferenceCompanyConsumer"
     }
 
     task runCollegeProducer(type: JavaExec) {
         classpath sourceSets.main.runtimeClasspath
-        mainClass = "bbejeck.chapter_3.producer.avro.AvroReferenceCollegeProducer"
+        mainClass = "bbejeck.producer-consumer.producer.avro.AvroReferenceCollegeProducer"
     }
 
     task runCollegeConsumer(type: JavaExec) {
         classpath sourceSets.main.runtimeClasspath
-        mainClass = "bbejeck.chapter_3.consumer.avro.AvroReferenceCollegeConsumer"
+        mainClass = "bbejeck.producer-consumer.consumer.avro.AvroReferenceCollegeConsumer"
     }
 
     clean {

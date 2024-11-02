@@ -1,4 +1,4 @@
-package bbejeck.chapter_5.connector;
+package bbejeck.KStream.connector;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;

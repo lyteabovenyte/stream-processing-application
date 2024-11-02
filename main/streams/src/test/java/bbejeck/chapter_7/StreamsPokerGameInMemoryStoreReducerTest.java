@@ -1,4 +1,4 @@
-package bbejeck.chapter_7;
+package bbejeck.KTable;
 
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serdes;

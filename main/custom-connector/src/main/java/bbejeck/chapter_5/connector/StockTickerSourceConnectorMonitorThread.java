@@ -1,4 +1,4 @@
-package bbejeck.chapter_5.connector;
+package bbejeck.KStream.connector;
 
 import org.apache.kafka.connect.connector.ConnectorContext;
 import org.apache.kafka.connect.errors.ConnectException;

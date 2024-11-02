@@ -1,11 +1,11 @@
 {
-  "namespace": "bbejeck.chapter_3.avro",
+  "namespace": "bbejeck.producer-consumer.avro",
   "type": "record",
   "name": "CollegeAvro",
   "fields": [
     {"name": "name", "type": "string"},
     {"name": "professors", "type":
-    {"type": "array", "items": "bbejeck.chapter_3.avro.PersonAvro"},
+    {"type": "array", "items": "bbejeck.producer-consumer.avro.PersonAvro"},
       "default": []
     }
   ]

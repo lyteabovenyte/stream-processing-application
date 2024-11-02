@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Return",
   "description": "A JSON schema of onf of the transaction type objects",
-  "javaType": "bbejeck.chapter_3.json.Return",
+  "javaType": "bbejeck.producer-consumer.json.Return",
   "type": "object",
   "properties": {
     "item": {

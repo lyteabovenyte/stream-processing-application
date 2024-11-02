@@ -3,7 +3,7 @@
   "title": "Avenger",
   "description": "A JSON schema of Avenger object",
   "type": "object",
-  "javaType": "bbejeck.chapter_3.json.AvengerJson",
+  "javaType": "bbejeck.producer-consumer.json.AvengerJson",
   "properties": {
     "name": {
       "type": "string"

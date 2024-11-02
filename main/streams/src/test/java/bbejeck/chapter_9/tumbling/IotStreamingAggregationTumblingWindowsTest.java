@@ -1,6 +1,6 @@
-package bbejeck.chapter_9.tumbling;
+package bbejeck.Processor-API.tumbling;
 
-import bbejeck.chapter_9.IotSensorAggregation;
+import bbejeck.Processor-API.IotSensorAggregation;
 import bbejeck.serializers.JsonDeserializer;
 import bbejeck.serializers.SerializationConfig;
 import org.apache.kafka.common.serialization.Deserializer;

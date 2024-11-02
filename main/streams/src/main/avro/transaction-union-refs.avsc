@@ -1,13 +1,13 @@
 {
   "type": "record",
-  "namespace": "bbejeck.chapter_3.avro",
+  "namespace": "bbejeck.producer-consumer.avro",
   "name": "Transaction",
 
   "fields" : [
     {"name": "txn_type", "type": [
-      "bbejeck.chapter_3.avro.Purchase",
-      "bbejeck.chapter_3.avro.Return",
-      "bbejeck.chapter_3.avro.Exchange"
+      "bbejeck.producer-consumer.avro.Purchase",
+      "bbejeck.producer-consumer.avro.Return",
+      "bbejeck.producer-consumer.avro.Exchange"
     ]},
 
     {"name": "identifier", "type": "long"}

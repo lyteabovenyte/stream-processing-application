@@ -1,4 +1,4 @@
-package bbejeck.chapter_4;
+package bbejeck.pipeline;
 
 import bbejeck.testcontainers.BaseTransactionalKafkaContainerTest;
 import bbejeck.utils.Topics;

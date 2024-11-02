@@ -1,9 +1,9 @@
-package bbejeck.chapter_3;
+package bbejeck.producer-consumer;
 
 
-import bbejeck.chapter_3.avro.AvengerAvro;
-import bbejeck.chapter_3.consumer.avro.AvroConsumer;
-import bbejeck.chapter_3.producer.avro.AvroProducer;
+import bbejeck.producer-consumer.avro.AvengerAvro;
+import bbejeck.producer-consumer.consumer.avro.AvroConsumer;
+import bbejeck.producer-consumer.producer.avro.AvroProducer;
 import bbejeck.clients.ConsumerRecordsHandler;
 import bbejeck.testcontainers.BaseKafkaContainerTest;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;

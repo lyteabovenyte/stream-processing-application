@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package bbejeck.chapter_4.proto;
+package bbejeck.pipeline.proto;
 
 import "purchase_event.proto";
 import "login_event.proto";

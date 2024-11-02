@@ -1,4 +1,4 @@
-package bbejeck.chapter_6;
+package bbejeck.Stateful-KStream;
 
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serdes;

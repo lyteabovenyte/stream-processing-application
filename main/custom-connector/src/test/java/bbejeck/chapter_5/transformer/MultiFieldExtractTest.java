@@ -1,4 +1,4 @@
-package bbejeck.chapter_5.transformer;
+package bbejeck.KStream.transformer;
 
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.SchemaBuilder;

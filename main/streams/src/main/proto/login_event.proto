@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package bbejeck.chapter_4.proto;
+package bbejeck.pipeline.proto;
 option java_multiple_files = true;
 option java_outer_classname = "LoginEventProto";
 

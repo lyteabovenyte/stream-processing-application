@@ -1,4 +1,4 @@
-package bbejeck.chapter_9.partitioner;
+package bbejeck.Processor-API.partitioner;
 
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;

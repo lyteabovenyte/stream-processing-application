@@ -1,5 +1,5 @@
 {
-  "namespace": "bbejeck.chapter_3.avro",
+  "namespace": "bbejeck.producer-consumer.avro",
   "type": "record",
   "name": "AvengerAvro",
   "doc": "Schema of a Marvel character",

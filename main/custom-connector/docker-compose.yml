@@ -49,12 +49,12 @@ services:
       CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
       CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
       CONNECT_LOG4J_ROOT_LOGLEVEL: "INFO"
-      CONNECT_LOG4J_LOGGERS: "bbejeck.chapter_5=DEBUG,org.apache.kafka.connect.runtime.rest=WARN,org.reflections=ERROR"
+      CONNECT_LOG4J_LOGGERS: "bbejeck.KStream=DEBUG,org.apache.kafka.connect.runtime.rest=WARN,org.reflections=ERROR"
       CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: "1"
       CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: "1"
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: "1"
     volumes:
-      - ./build/libs:/usr/share/java/bbejeck-chapter_5-connector
+      - ./build/libs:/usr/share/java/bbejeck-KStream-connector
 
   postgres:
     # *-----------------------------*
@@ -67,7 +67,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - ./src/main/java/bbejeck/chapter_5/orientation_students.sql:/docker-entrypoint-initdb.d/cities.sql
+      - ./src/main/java/bbejeck/KStream/orientation_students.sql:/docker-entrypoint-initdb.d/cities.sql
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.2.2

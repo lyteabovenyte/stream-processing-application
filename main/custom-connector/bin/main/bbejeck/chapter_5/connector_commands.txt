@@ -77,7 +77,7 @@ curl -i -X PUT localhost:8083/connectors/student-info-elasticsearch-connector/co
 curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
     -H "Content-Type: application/json" \
 	-d '{
-	        "connector.class": "bbejeck.chapter_5.connector.StockTickerSourceConnector",
+	        "connector.class": "bbejeck.KStream.connector.StockTickerSourceConnector",
 			"api.url": "https://query1.finance.yahoo.com/v7/finance/quote",
 			"tasks.max": "1",
 			"topic": "yahoo_feed_results",
@@ -86,11 +86,11 @@ curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
             "api.poll.interval": "5000",
             "token": "token-placeholder",
             "result.node.path": "/quoteResponse/result",
-            "symbol.update.path": "/usr/share/java/bbejeck-chapter_5-connector/configs/ticker-symbols.txt",
+            "symbol.update.path": "/usr/share/java/bbejeck-KStream-connector/configs/ticker-symbols.txt",
 			"value.converter": "org.apache.kafka.connect.json.JsonConverter",
 			"value.converter.schemas.enable": "true",
 			"transforms":"extractFields",
-            "transforms.extractFields.type":"bbejeck.chapter_5.transformer.MultiFieldExtract$Value",
+            "transforms.extractFields.type":"bbejeck.KStream.transformer.MultiFieldExtract$Value",
             "transforms.extractFields.extract.fields":"bid,ask,displayName,symbol",
 			"schema.ignore": "false",
 			"key.ignore": "true"
@@ -99,7 +99,7 @@ curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
 curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
     -H "Content-Type: application/json" \
 	-d '{
-	        "connector.class": "bbejeck.chapter_5.connector.StockTickerSourceConnector",
+	        "connector.class": "bbejeck.KStream.connector.StockTickerSourceConnector",
 			"api.url": "https://query1.finance.yahoo.com/v7/finance/quote",
 			"tasks.max": "1",
 			"topic": "yahoo_feed_results",
@@ -108,11 +108,11 @@ curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
             "api.poll.interval": "5000",
             "token": "token-placeholder",
             "result.node.path": "/quoteResponse/result",
-            "symbol.update.path": "/usr/share/java/bbejeck-chapter_5-connector/configs/ticker-symbols.txt",
+            "symbol.update.path": "/usr/share/java/bbejeck-KStream-connector/configs/ticker-symbols.txt",
 			"value.converter": "org.apache.kafka.connect.json.JsonConverter",
 			"value.converter.schemas.enable": "false",
 			"transforms":"extractFields",
-            "transforms.extractFields.type":"bbejeck.chapter_5.transformer.MultiFieldExtract$Value",
+            "transforms.extractFields.type":"bbejeck.KStream.transformer.MultiFieldExtract$Value",
             "transforms.extractFields.extract.fields":"bid,ask,displayName,symbol",
 			"schema.ignore": "true",
 			"key.ignore": "true"
@@ -122,7 +122,7 @@ curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
 curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
     -H "Content-Type: application/json" \
 	-d '{
-	        "connector.class": "bbejeck.chapter_5.connector.StockTickerSourceConnector",
+	        "connector.class": "bbejeck.KStream.connector.StockTickerSourceConnector",
 			"api.url": "https://query1.finance.yahoo.com/v7/finance/quote",
 			"tasks.max": "1",
 			"topic": "yahoo_feed_results",
@@ -133,7 +133,7 @@ curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
 			"value.converter": "org.apache.kafka.connect.json.JsonConverter",
 			"value.converter.schemas.enable": "false",
 			"transforms":"extractFields",
-            "transforms.extractFields.type":"bbejeck.chapter_5.transformer.MultiFieldExtract$Value",
+            "transforms.extractFields.type":"bbejeck.KStream.transformer.MultiFieldExtract$Value",
             "transforms.extractFields.extract.fields":"bid,ask,displayName,symbol",
 			"schema.ignore": "true",
 			"key.ignore": "true"
@@ -153,7 +153,7 @@ curl -XGET localhost:9200/
 List all connectors
 curl -s -XGET http://localhost:8083/connector-plugins | jq '.[].class'
 Expected results
-"bbejeck.chapter_5.connector.StockTickerSourceConnector"
+"bbejeck.KStream.connector.StockTickerSourceConnector"
 "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector"
 "io.confluent.connect.jdbc.JdbcSinkConnector"
 "io.confluent.connect.jdbc.JdbcSourceConnector"

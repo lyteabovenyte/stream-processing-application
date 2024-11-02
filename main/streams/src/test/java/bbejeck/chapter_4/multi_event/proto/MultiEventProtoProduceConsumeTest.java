@@ -1,6 +1,6 @@
-package bbejeck.chapter_4.multi_event.proto;
+package bbejeck.pipeline.multi_event.proto;
 
-import bbejeck.chapter_4.proto.Events;
+import bbejeck.pipeline.proto.Events;
 import bbejeck.data.ConstantProtoEventDataSource;
 import bbejeck.data.DataSource;
 import bbejeck.testcontainers.BaseKafkaContainerTest;

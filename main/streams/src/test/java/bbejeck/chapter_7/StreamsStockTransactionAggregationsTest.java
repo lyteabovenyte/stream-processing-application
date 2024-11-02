@@ -1,8 +1,8 @@
-package bbejeck.chapter_7;
+package bbejeck.KTable;
 
 
-import bbejeck.chapter_7.proto.Aggregate;
-import bbejeck.chapter_7.proto.Transaction;
+import bbejeck.KTable.proto.Aggregate;
+import bbejeck.KTable.proto.Transaction;
 import bbejeck.utils.SerdeUtil;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serde;

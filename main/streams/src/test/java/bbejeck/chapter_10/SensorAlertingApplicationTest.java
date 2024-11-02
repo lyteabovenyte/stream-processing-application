@@ -1,7 +1,7 @@
-package bbejeck.chapter_10;
+package bbejeck.end-to-end;
 
-import bbejeck.chapter_6.proto.Sensor;
-import bbejeck.chapter_9.proto.SensorAggregation;
+import bbejeck.Stateful-KStream.proto.Sensor;
+import bbejeck.Processor-API.proto.SensorAggregation;
 import bbejeck.utils.SerdeUtil;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;

@@ -1,6 +1,6 @@
 package bbejeck.serializers;
 
-import bbejeck.chapter_3.model.User;
+import bbejeck.producer-consumer.model.User;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

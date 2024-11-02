@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package bbejeck.chapter_3;
+package bbejeck.producer-consumer;
 
-import bbejeck.chapter_3.consumer.json.JsonSchemaConsumer;
-import bbejeck.chapter_3.json.AvengerJson;
-import bbejeck.chapter_3.producer.json.JsonSchemaProducer;
+import bbejeck.producer-consumer.consumer.json.JsonSchemaConsumer;
+import bbejeck.producer-consumer.json.AvengerJson;
+import bbejeck.producer-consumer.producer.json.JsonSchemaProducer;
 import bbejeck.clients.ConsumerRecordsHandler;
 import bbejeck.testcontainers.BaseKafkaContainerTest;
 import io.confluent.kafka.serializers.AbstractKafkaSchemaSerDeConfig;

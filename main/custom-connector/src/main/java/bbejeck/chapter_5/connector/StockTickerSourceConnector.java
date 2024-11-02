@@ -1,4 +1,4 @@
-package bbejeck.chapter_5.connector;
+package bbejeck.KStream.connector;
 
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.common.utils.AppInfoParser;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static bbejeck.chapter_5.connector.StockTickerSourceConnectorConfig.*;
+import static bbejeck.KStream.connector.StockTickerSourceConnectorConfig.*;
 
 /**
  * The SourceConnector for reading in stock values from a ticker service

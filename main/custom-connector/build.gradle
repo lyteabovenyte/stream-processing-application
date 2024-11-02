@@ -78,7 +78,7 @@ clean {
 }
 
 application {
-    mainClass = "bbejeck.chapter_5.web_server.TickerServer"
+    mainClass = "bbejeck.KStream.web_server.TickerServer"
 }
 
 shadowJar {

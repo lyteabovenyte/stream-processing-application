@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Exchange",
   "description": "A JSON schema of a Company using Person refs",
-  "javaType": "bbejeck.chapter_3.json.CompanyJson",
+  "javaType": "bbejeck.producer-consumer.json.CompanyJson",
   "type": "object",
   "properties": {
     "name": {

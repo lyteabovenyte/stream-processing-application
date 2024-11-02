@@ -1,13 +1,13 @@
 {
   "type": "record",
-  "namespace": "bbejeck.chapter_3.avro",
+  "namespace": "bbejeck.producer-consumer.avro",
   "name": "TransportationEvent",
 
   "fields" : [
     {"name": "txn_type", "type": [
-      "bbejeck.chapter_4.avro.TruckEvent",
-      "bbejeck.chapter_4.avro.PlaneEvent",
-      "bbejeck.chapter_4.avro.DeliveryEvent"
+      "bbejeck.pipeline.avro.TruckEvent",
+      "bbejeck.pipeline.avro.PlaneEvent",
+      "bbejeck.pipeline.avro.DeliveryEvent"
     ]}
   ]
 }

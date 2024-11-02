@@ -1,7 +1,7 @@
-package bbejeck.chapter_4;
+package bbejeck.pipeline;
 
-import bbejeck.chapter_4.avro.BrokerSummary;
-import bbejeck.chapter_4.avro.StockTransaction;
+import bbejeck.pipeline.avro.BrokerSummary;
+import bbejeck.pipeline.avro.StockTransaction;
 import bbejeck.data.DataGenerator;
 import bbejeck.testcontainers.BaseTransactionalKafkaContainerTest;
 import bbejeck.utils.Topics;

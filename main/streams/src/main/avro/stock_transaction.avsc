@@ -1,6 +1,6 @@
 {
   "type":"record",
-  "namespace": "bbejeck.chapter_4.avro",
+  "namespace": "bbejeck.pipeline.avro",
   "name":"StockTransaction",
   "fields": [
     {"name": "symbol", "type":"string"},

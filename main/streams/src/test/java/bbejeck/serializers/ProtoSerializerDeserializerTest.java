@@ -1,6 +1,6 @@
 package bbejeck.serializers;
 
-import bbejeck.chapter_3.proto.Avenger;
+import bbejeck.producer-consumer.proto.Avenger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

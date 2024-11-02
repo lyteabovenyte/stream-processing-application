@@ -1,4 +1,4 @@
-package bbejeck.chapter_5.connector;
+package bbejeck.KStream.connector;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;

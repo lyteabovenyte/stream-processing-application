@@ -1,4 +1,4 @@
-package bbejeck.chapter_4;
+package bbejeck.pipeline;
 
 import bbejeck.testcontainers.BaseProxyInterceptingKafkaContainerTest;
 import bbejeck.utils.Topics;

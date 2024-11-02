@@ -1,7 +1,7 @@
-package bbejeck.chapter_10;
+package bbejeck.end-to-end;
 
-import bbejeck.chapter_7.proto.Transaction;
-import bbejeck.chapter_9.proto.StockPerformance;
+import bbejeck.KTable.proto.Transaction;
+import bbejeck.Processor-API.proto.StockPerformance;
 import bbejeck.utils.SerdeUtil;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serde;

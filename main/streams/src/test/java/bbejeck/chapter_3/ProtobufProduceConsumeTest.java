@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package bbejeck.chapter_3;
+package bbejeck.producer-consumer;
 
-import bbejeck.chapter_3.consumer.proto.ProtoConsumer;
-import bbejeck.chapter_3.producer.proto.ProtoProducer;
-import bbejeck.chapter_3.proto.Avenger;
+import bbejeck.producer-consumer.consumer.proto.ProtoConsumer;
+import bbejeck.producer-consumer.producer.proto.ProtoProducer;
+import bbejeck.producer-consumer.proto.Avenger;
 import bbejeck.clients.ConsumerRecordsHandler;
 import bbejeck.testcontainers.BaseKafkaContainerTest;
 import com.google.protobuf.Descriptors;
