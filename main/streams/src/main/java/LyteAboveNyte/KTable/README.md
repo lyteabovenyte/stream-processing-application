@@ -1,6 +1,6 @@
 # KTable API
 
-Chapter 8 covers the `KTable` API in Kafka Streams.
+thid dir covers the `KTable` API in Kafka Streams.
 
 * [KTableAggregationExample](KTableAggregationExample.java) An example of an aggregation with a `KTable`
 * [KTableCountExample](KTableCountExample.java) Example of performing a count in the `KTable` API

@@ -1,8 +1,8 @@
 **FOR ALL THE EXAMPLES YOU"LL NEED TO MAKE SURE TO RUN `docker-compose up -d` BEFOREHAND SO YOU"LL HAVE A LIVE BROKER FOR KAFKA STREAMS TO CONNECT TO**
 
-Now let's take a brief tour of the examples in chapter 6.
+Now let's take a brief tour of the examples.
 
-### A tour of the chapter 6 code
+### A tour of the code
 
 * **bbejeck.Stateful-KStream.client_supplier** package
 

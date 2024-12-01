@@ -2,7 +2,7 @@
 
 This contains the example `sql` files you can execute to try out `ksqlDB`
 
-To run the examples in this chapter take the following steps:
+To run the examples take the following steps:
 
 1. If you have any existing Kafka brokers running in docker, stop them.
 2. CD into this directory and run `docker compose up -d`

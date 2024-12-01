@@ -1,28 +1,26 @@
 # Kafka Streams
 
-This module contains the code for Chapters 3 (Schema Registry), 4 (Producer and Consumer clients), 6-10 (Kafka Streams), 11 (ksqlDB), and 14 (testing)
-
-## Guide to example code by chapter
+## feature covered:
 There's a README file in each chapter directory describing the code located there and instructions required.
 
-* [Chapter 3](src/main/java/bbejeck/producer-consumer/README.md) Schema Registry producer and consumer clients for working with Avro, Protobuf, or JSON Schema
-* [Chapter 4](src/main/java/bbejeck/pipeline/README.md) `KafkaProducer` and `KafkaConsumer` client examples
-* [Chapter 6](src/main/java/bbejeck/Stateful-KStream/README.md) Intro to Kafka Streams
-* [Chapter 7](src/main/java/bbejeck/KTable/README.md) Stateful operations in Kafka Streams
-* [Chapter 8](src/main/java/bbejeck/Windowing-Stateful/README.md) The `KTable` API example code
-* [Chapter 9](src/main/java/bbejeck/Processor-API/README.md) Windowing examples
-* [Chapter 10](src/main/java/bbejeck/end-to-end/README.md) Kafka Streams Processor API examples
-* [Chapter 11](src/main/java/bbejeck/end-to-end/README.md) ksqlDB example SQL files
-* [Chapter_14](src/main/java/bbejeck/chapter_14/README.md) Example code written in support of demonstrating testing
+* Schema Registry producer and consumer clients for working with Avro, Protobuf, or JSON Schema
+* `KafkaProducer` and `KafkaConsumer` client examples
+* Intro to Kafka Streams
+* Stateful operations in Kafka Streams
+* The `KTable` API example code
+* Windowing examples
+* Kafka Streams Processor API examples
+* ksqlDB example SQL files
+* Example code written in support of demonstrating testing
 
 ## Supporting code
 
-The following code is used throughout the examples as helper code.
+The following code is used throughout the repo as helper code.
 
-* [clients](src/main/java/bbejeck/clients) - `MockDataProducer` and the `ConsumerRecordsHandler` interface
-* [serializers](src/main/java/bbejeck/serializers) (de)serializer implementations and helper classes for JSON and Protobuf records used throughout the examples
-* [data](src/main/java/bbejeck/data) Utility code used to generate data for the examples
-* [utils](src/main/java/bbejeck/utils) Utility classes used for topic management, serde creation, integration testing utilities etc.
-* [BaseStreamsApplication](src/main/java/bbejeck/BaseStreamsApplication.java) - An abstract class containing some common functionality for all Kafka Streams examples developed.
+* [clients](src/main/java/) - `MockDataProducer` and the `ConsumerRecordsHandler` interface
+* [serializers](src/main/java/) (de)serializer implementations and helper classes for JSON and Protobuf records used throughout the examples
+* [data](src/main/java/) Utility code used to generate data for the examples
+* [utils](src/main/java/) Utility classes used for topic management, serde creation, integration testing utilities etc.
+* [BaseStreamsApplication](src/main/java/) - An abstract class containing some common functionality for all Kafka Streams examples developed.
 
 

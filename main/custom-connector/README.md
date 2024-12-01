@@ -1,6 +1,4 @@
-## Basic Commands for Chapter 5
- 
-Chapter 5 has several moving parts so here are some basic commands for running the code covered in the chapter.
+## Basic Commands
 
 ### Prerequisites
 
@@ -82,7 +80,7 @@ To run the custom connector use this `curl` command:
 curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
     -H "Content-Type: application/json" \
 	-d '{
-	     "connector.class": "bbejeck.KStream.connector.StockTickerSourceConnector",
+	     "connector.class": "KStream.connector.StockTickerSourceConnector",
 		 "api.url": "http://web-server:4567/finance/quote",
 		 "service.url": "http://web-server:4567/symbols",
 		 "tasks.max": "1",
@@ -94,7 +92,7 @@ curl -i -X PUT localhost:8083/connectors/stock-feed-connector/config \
 		 "value.converter": "org.apache.kafka.connect.json.JsonConverter",
 		 "value.converter.schemas.enable": "false",
 		 "transforms":"extractFields",
-         "transforms.extractFields.type":"bbejeck.KStream.transformer.MultiFieldExtract$Value",
+         "transforms.extractFields.type":"KStream.transformer.MultiFieldExtract$Value",
          "transforms.extractFields.extract.fields":"bid,ask,displayName,symbol",
 		 "schema.ignore": "true",
 		 "key.ignore": "true"

@@ -1,7 +1,7 @@
 # Kafka Streams Processor API
   
 
-The Kafka Streams Processor API gives you the most flexibility to build virtually any kind of event streaming application you can come up with.  Here's a summary of the code you'll find covered in chapter 10.
+The Kafka Streams Processor API gives you the most flexibility to build virtually any kind of event streaming application you can come up with.  Here's a summary of the code you'll find
 
 ## Applications
 

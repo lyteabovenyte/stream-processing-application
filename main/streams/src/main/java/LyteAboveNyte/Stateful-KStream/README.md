@@ -1,7 +1,5 @@
 # Kafka Streams State
 
-Chapter 7 covers stateful operations such as joins, aggregations, and reducing.  Since you might have to change the key to enable a stateful operation repartitioning and optimization of redundant repartition topics is covered as well.
-
 * [KafkaStreamsJoinsApp](KafkaStreamsJoinsApp.java) Is an example of a Stream-Stream equi-join between two streams of purchases for a fictional store.
 * [OptimizingStreamsRepartition](OptimizingStreamsRepartition.java) Demonstrates how to optimize a topology to remove redundant repartition topics.
 * [ProactiveStreamsRepartition](ProactiveStreamsRepartition.java) Shows how to proactively repartition when changing a key eliminating any redundant repartition topics downstream
